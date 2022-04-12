@@ -4,7 +4,7 @@ A clicker game based around getting the most SusCoins in the least amount of tim
 
 # Leaderboard Thingy :trollface:
 
-## 10k time
+## 10k time (default)
 
 |Person|Time  |
 |:-----|:-----|
