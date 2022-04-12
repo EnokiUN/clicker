@@ -1,5 +1,7 @@
 extends Control
 
+const STAT_STRING: String = "Time: %.2fs\nClicks: %d\nCPS: %.2fs\nAVG coins/click: %.2fs SusCoins"
+
 var cash: int = 0
 var clicked: int = 0
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
@@ -17,7 +19,8 @@ func _ready():
 func _process(delta):
 	if counting:
 		elapsed += delta
-		timer_label.text = "Time: %.2fs\nClicks: %d\nCPS: %.2fs\nAVG coins/click: %.2fs SusCoins" % [elapsed, clicked, clicked / elapsed, float(cash) / clicked]
+		var cps: float = float(clicked) / elapsed
+		timer_label.text = STAT_STRING % [elapsed, clicked, cps, float(cash) / clicked]
 
 func _on_MoneyButton_pressed():
 	if !counting:
